@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatonGPT</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f0f0f0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatonGPT</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #121212; /* Dark background */
+      color: #fff;
+    }
 
-        .redirect-button {
-            padding: 18px 36px;
-            font-size: 18px;
-            color: #fff;
-            background-color: #4A90E2;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-            transition: background 0.3s, transform 0.2s;
-        }
+    .redirect-button {
+      padding: 18px 36px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #121212; /* Dark text for contrast */
+      background-color: #FFD700; /* Gold */
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 
+                  0 0 40px rgba(255, 215, 0, 0.6),
+                  0 0 60px rgba(255, 215, 0, 0.4);
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      animation: pulseGlow 2s infinite alternate;
+    }
 
-        .redirect-button:hover {
-            background-color: #357ABD;
-            transform: scale(1.05);
-        }
+    /* Pulsing glow animation */
+    @keyframes pulseGlow {
+      from {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 
+                    0 0 30px rgba(255, 215, 0, 0.4), 
+                    0 0 45px rgba(255, 215, 0, 0.2);
+      }
+      to {
+        box-shadow: 0 0 25px rgba(255, 215, 0, 1), 
+                    0 0 50px rgba(255, 215, 0, 0.9), 
+                    0 0 75px rgba(255, 215, 0, 0.6);
+      }
+    }
 
-        .redirect-button:active {
-            transform: scale(0.95);
-        }
-    </style>
+    .redirect-button:hover {
+      background-color: #e6c200; /* darker gold */
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 1), 
+                  0 0 60px rgba(255, 215, 0, 0.9),
+                  0 0 90px rgba(255, 215, 0, 0.7);
+    }
+
+    .redirect-button:active {
+      transform: scale(0.95);
+    }
+  </style>
 </head>
 <body>
-    <button class="redirect-button" id="goToChatGPT">ChatGPT</button>
+  <button class="redirect-button" id="goToChatGPT">ChatGPT</button>
 
-    <script>
-        const button = document.getElementById('goToChatGPT');
-        button.addEventListener('click', () => {
-            window.location.href = 'https://chat.openai.com';
-        });
-    </script>
+  <script>
+    const button = document.getElementById('goToChatGPT');
+    button.addEventListener('click', () => {
+      window.location.href = 'https://chat.openai.com';
+    });
+  </script>
 </body>
 </html>
+
