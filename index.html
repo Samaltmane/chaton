@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatonGPT</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+        }
+
+        .redirect-button {
+            padding: 18px 36px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4A90E2;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .redirect-button:hover {
+            background-color: #357ABD;
+            transform: scale(1.05);
+        }
+
+        .redirect-button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <button class="redirect-button" id="goToChatGPT">Open ChatonGPT</button>
+
+    <script>
+        const button = document.getElementById('goToChatGPT');
+        button.addEventListener('click', () => {
+            window.location.href = 'https://chat.openai.com';
+        });
+    </script>
+</body>
+</html>
