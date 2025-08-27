@@ -5,39 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatonGPT</title>
   <style>
+    /* Full-screen video background */
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
       font-family: Arial, sans-serif;
+    }
+
+    video#bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4); /* Darken video for contrast */
+    }
+
+    /* Centered container for the button */
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
       display: flex;
-      flex-direction: column; /* stack items vertically */
       justify-content: center;
       align-items: center;
-      background: #121212; /* Dark background */
-      color: #fff;
+      flex-direction: column;
     }
 
-    .title {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #FFD700; /* Gold text */
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-    }
-
+    /* Glowing gold button */
     .redirect-button {
-      width: 250px;   /* bigger size */
-      height: 120px;  /* taller size */
-      background-color: #FFD700; /* Gold */
+      width: 300px;
+      height: 150px;
+      background-color: #FFD700;
       border: none;
       border-radius: 20px;
       cursor: pointer;
+      font-size: 28px;
+      font-weight: bold;
+      color: #121212;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.9), 
                   0 0 50px rgba(255, 215, 0, 0.7),
                   0 0 75px rgba(255, 215, 0, 0.5);
       transition: transform 0.2s, box-shadow 0.3s;
       animation: pulseGlow 2s infinite alternate;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Pulsing glow animation */
@@ -54,6 +72,7 @@
       }
     }
 
+    /* Hover effects */
     .redirect-button:hover {
       transform: scale(1.1);
       box-shadow: 0 0 40px rgba(255, 215, 0, 1), 
@@ -67,11 +86,17 @@
   </style>
 </head>
 <body>
-  <!-- Text outside of button -->
-  <div class="title">ChatONGPT</div>
 
-  <!-- Big glowing box (button without text inside) -->
-  <button class="redirect-button" id="goToChatGPT"></button>
+  <!-- Background video from hosted URL -->
+  <video id="bgVideo" autoplay muted loop>
+    <source src="https://cdn.coverr.co/videos/coverr-night-sky-1681558866533?format=mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Centered container with glowing button -->
+  <div class="container">
+    <button class="redirect-button" id="goToChatGPT">ChatONGPT</button>
+  </div>
 
   <script>
     const button = document.getElementById('goToChatGPT');
@@ -79,7 +104,7 @@
       window.location.href = 'https://chat.openai.com';
     });
   </script>
+
 </body>
 </html>
-
 
