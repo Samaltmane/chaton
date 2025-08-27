@@ -11,48 +11,54 @@
       height: 100%;
       font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column; /* stack items vertically */
       justify-content: center;
       align-items: center;
       background: #121212; /* Dark background */
       color: #fff;
     }
 
-    .redirect-button {
-      padding: 18px 36px;
-      font-size: 20px;
+    .title {
+      font-size: 28px;
       font-weight: bold;
-      color: #121212; /* Dark text for contrast */
+      margin-bottom: 20px;
+      color: #FFD700; /* Gold text */
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    }
+
+    .redirect-button {
+      width: 250px;   /* bigger size */
+      height: 120px;  /* taller size */
       background-color: #FFD700; /* Gold */
       border: none;
-      border-radius: 12px;
+      border-radius: 20px;
       cursor: pointer;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 
-                  0 0 40px rgba(255, 215, 0, 0.6),
-                  0 0 60px rgba(255, 215, 0, 0.4);
-      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.9), 
+                  0 0 50px rgba(255, 215, 0, 0.7),
+                  0 0 75px rgba(255, 215, 0, 0.5);
+      transition: transform 0.2s, box-shadow 0.3s;
       animation: pulseGlow 2s infinite alternate;
     }
 
     /* Pulsing glow animation */
     @keyframes pulseGlow {
       from {
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 
-                    0 0 30px rgba(255, 215, 0, 0.4), 
-                    0 0 45px rgba(255, 215, 0, 0.2);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 
+                    0 0 40px rgba(255, 215, 0, 0.4), 
+                    0 0 60px rgba(255, 215, 0, 0.2);
       }
       to {
-        box-shadow: 0 0 25px rgba(255, 215, 0, 1), 
-                    0 0 50px rgba(255, 215, 0, 0.9), 
-                    0 0 75px rgba(255, 215, 0, 0.6);
+        box-shadow: 0 0 35px rgba(255, 215, 0, 1), 
+                    0 0 70px rgba(255, 215, 0, 0.9), 
+                    0 0 100px rgba(255, 215, 0, 0.6);
       }
     }
 
     .redirect-button:hover {
-      background-color: #e6c200; /* darker gold */
-      transform: scale(1.08);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 1), 
-                  0 0 60px rgba(255, 215, 0, 0.9),
-                  0 0 90px rgba(255, 215, 0, 0.7);
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(255, 215, 0, 1), 
+                  0 0 80px rgba(255, 215, 0, 0.9),
+                  0 0 120px rgba(255, 215, 0, 0.7);
     }
 
     .redirect-button:active {
@@ -61,7 +67,11 @@
   </style>
 </head>
 <body>
-  <button class="redirect-button" id="goToChatGPT">ChatONGPT</button>
+  <!-- Text outside of button -->
+  <div class="title">ChatONGPT</div>
+
+  <!-- Big glowing box (button without text inside) -->
+  <button class="redirect-button" id="goToChatGPT"></button>
 
   <script>
     const button = document.getElementById('goToChatGPT');
